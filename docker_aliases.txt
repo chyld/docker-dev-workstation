@@ -1,0 +1,1 @@
+alias dev="docker run --security-opt seccomp:unconfined --rm -it -p 5858:5858 -p 8888:8888 -v "'$(pwd)'":/home/europa/project chyld/dev bash --login"
