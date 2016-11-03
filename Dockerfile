@@ -25,6 +25,7 @@ RUN apt-get update && apt-get install -y \
 
 # EUROPA
 RUN useradd -ms /bin/bash europa
+RUN mkdir -p /home/europa/temp
 
 # NODE
 RUN cd /tmp && wget https://nodejs.org/dist/v7.0.0/node-v7.0.0-linux-x64.tar.xz \
