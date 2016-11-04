@@ -42,5 +42,5 @@ WORKDIR /home/europa
 ADD .bash_profile .
 ADD .bash_aliases .
 ADD .tmux.conf .
-RUN mkdir -p /home/europa/temp
+RUN mkdir -p /home/europa/temp && touch /home/europa/.sudo_as_admin_successful
 RUN /bin/bash --login -c "npm i -g yarn"
