@@ -11,7 +11,8 @@ txt7='\[\e[0;37m\]'
 txtrst='\[\e[0m\]'    # Text Reset
 
 PATH_NODE=/usr/local/node/bin
+PATH_PIP=/home/europa/.local/bin
 
 export SHELL=/bin/bash
-export PATH=$PATH_NODE:$PATH
+export PATH=$PATH_NODE:$PATH_PIP:$PATH
 export PS1="$txt2\u$txt3@$txt2\h $txt4\w 🚀 $txtrst "

@@ -26,9 +26,8 @@ RUN cd /tmp && wget https://nodejs.org/dist/v7.0.0/node-v7.0.0-linux-x64.tar.xz 
     && tar -xvf node-v7.0.0-linux-x64.tar.xz && mv node-v7.0.0-linux-x64 /usr/local/node \
     && cd /usr/local && chown -R europa node
 
-# PYTHON 3 + PACKAGES
+# PYTHON 3 PIP
 RUN pip3 install --upgrade pip
-RUN pip3 install jupyter ipdb httpie
 
 # PREP FOR TMUX
 RUN locale-gen en_US.UTF-8
@@ -37,6 +36,9 @@ ENV LC_CTYPE=en_US.UTF-8
 # SWITCHING TO EUROPA
 USER europa
 WORKDIR /home/europa
+
+# PYTHON 3 PACKAGES 
+RUN pip3 install --user numpy scipy matplotlib ipython jupyter pandas sympy nose ipdb httpie
 
 # CUSTOMIZATIONS
 ADD .bash_profile .
